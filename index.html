@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmGuard</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+
+            -webkit-user-select: none; /* Safari */
+            -ms-user-select: none; /* IE 10 and IE 11 */
+            user-select: none; /* Standard syntax */
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+
+            background: url('farm-background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center ;
+            
+        }
+            nav{
+            /* box-shadow: 0px 0px 100px 1px black; */
+            display: flex;
+            
+            justify-content: space-between;
+            align-items: center;
+            /* height: 50px; */
+            padding: 10px 50px;
+            width: 90vw;
+            margin-bottom: 100px;
+            
+            }
+
+            @media only screen and (max-width: 1000px) {
+                nav{
+                    /* box-shadow: 0px 0px 100px 1px black; */
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 50px;
+                    padding: 10px 50px;
+                    width: 90vw;
+                    margin-bottom: 100px;
+                }
+            }
+       
+        
+        
+        .nav-left{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .nav-left img{
+            height: 50px;
+            border-radius: 30%;
+            border: 2px solid #FF9874;
+
+        }
+        .nav-left ul{
+            display: flex;
+            justify-content:flex-start;
+        }
+        .nav-left ul li{
+            padding: 4px 10px ;
+            font-weight: 600;
+            font-size: 16px;
+            color: black;
+            border: 2px solid #FF9874;
+            margin: 0px 2px;
+            border-radius: 8px;
+            transition: all 0.2s ease-in-out 0s;
+        }
+        .nav-left ul li:hover{
+            scale: 1.05;
+            box-shadow: 0px 0px 10px #FF9874;
+            cursor: pointer;
+        }
+        
+        .nav-mid h2{
+            font-weight: 600;
+            font-size: 25px;
+            text-align: center;
+            color: #000000;
+            white-space: nowrap;
+            text-shadow: 1px 1px 1px #FF9874;
+        }
+        .nav-right{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .nav-right input{
+            height: 24px;
+            border-radius: 10px;
+            border: 2px solid #FF9874;
+            width: 13rem;
+            padding: 4px 10px;
+            font-weight: bold;
+        }
+        .nav-right img{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            border: 2px solid #FF9874;
+            transition: all 0.2s ease-in-out 0s;
+        }
+        .nav-right img:hover{
+            box-shadow: 0px 0px 10px #FF9874;
+            cursor: pointer;
+        }
+        .container{
+            display: flex;
+            margin-top: 30px;
+            flex-direction: column;
+            align-items: center;
+
+            /* glass effect */
+            background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.1),
+            rgba(255, 255, 255, 0)
+            );
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            box-shadow:  0px 0px 10px rgba(0, 0, 0, 0.338);
+
+            border-radius: 20px;
+            padding-bottom: 30px;
+        }
+        .container h3{
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 30px;
+            color: white;
+            text-shadow: 2px 2px 2px black;
+        }
+        .card-container{
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            width: 80vw;
+        }
+        .card{
+            display: flex;
+            min-height: 100px;
+            justify-content: space-between;
+            aspect-ratio: 5/2;
+            margin: 10px;
+            background-color: white;
+            border-radius: 8px;
+            transition: all 0.2s ease-in-out 0s;
+        }
+        .card-left{
+            width: 50%;
+        }
+        .card-left img{
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            border-top-right-radius: 20%;
+            border-bottom-right-radius: 20%;
+            height: 100px;
+        }
+        .card-right{
+            display: flex;
+            width: 50%;
+            padding: 10px;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        .card-right h4{
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            
+        }
+        .card-right button{
+            background-color: #FF9874;
+            border: none;
+            border-radius: 8px;
+            padding: 4px;
+            font-size: 12px;
+            color:white;
+        }
+        .card:hover{
+            scale: 1.05;
+            box-shadow: 0px 0px 20px 1px #FF9874;
+        }
+        #btn-add-more-plant{
+            font-weight: 600;
+            color: white;
+            margin-top: 30px;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #9DBDFF;
+            transition: all 0.2s ease-in-out 0s;
+        }
+        #btn-add-more-plant:hover{
+            text-shadow: 2px 2px black;
+            scale: 1.1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav> 
+            <div class="nav-left">
+                <img src="logo.jpg" id="app-logo">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>contact</li>
+                </ul>
+            </div>
+            <div class="nav-mid">
+                <h2>FARM GUARD</h2>
+            </div>
+            <div class="nav-right">
+                <input type="text" placeholder="Search">
+                <img src="farmer-profile.jpg" alt="">
+            </div>
+        </nav>
+    </header>
+    <div class="crousal"></div>
+    <div class="container">
+        <h3>Select Plant Type</h3>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-left">
+                    <img src="apple-img.jpg" alt="">
+                </div>
+                <div class="card-right">
+                    <h4>Apple</h4>
+                    <button type="submit">Upload Image</button>
+                    
+                </div>
+            </div>
+
+            
+
+            <div class="card">
+                <div class="card-left">
+                    <img src="orange-img.jpg" alt="">
+                </div>
+                <div class="card-right">
+                    <h4>Orange</h4>
+                    <button type="submit">Upload Image</button>
+                    
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-left">
+                    <img src="corn-img.jpeg" alt="">
+                </div>
+                <div class="card-right">
+                    <h4>Corn</h4>
+                    <button type="submit">Upload Image</button>
+                    
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-left">
+                    <img src="potato-img.jpg" alt="">
+                </div>
+                <div class="card-right">
+                    <h4>Potato</h4>
+                    <button type="submit">Upload Image</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-left">
+                    <img src="tomato-img.jpg" alt="">
+                </div>
+                <div class="card-right">
+                    <h4>Tomato</h4>
+                    <button type="submit">Upload Image</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-left">
+                    <img src="grape-img.jpg" alt="">
+                </div>
+                <div class="card-right">
+                    <h4>Grape</h4>
+                    <button type="submit">Upload Image</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-left">
+                    <img src="peach-img.png" alt="">
+                </div>
+                <div class="card-right">
+                    <h4>Peach</h4>
+                    <button type="submit">Upload Image</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-left">
+                    <img src="strawberry-img.jpg" alt="">
+                </div>
+                <div class="card-right">
+                    <h4>Strawberry</h4>
+                    <button type="submit">Upload Image</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-left">
+                    <img src="squash-img.jpg" alt="">
+                </div>
+                <div class="card-right">
+                    <h4>Squash</h4>
+                    <button type="submit">Upload Image</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-left">
+                    <img src="soybean-img.jpeg" alt="">
+                </div>
+                <div class="card-right">
+                    <h4>Soyabean</h4>
+                    <button type="submit">Upload Image</button>
+                </div>
+            </div>
+        </div>
+        <button id="btn-add-more-plant">ADD MORE PLANTS</button>
+        
+    </div>
+    <footer>
+
+    </footer>
+</body>
+</html>
